@@ -1,0 +1,10 @@
+Generated with the built-in image_gen tool.
+
+Use case: photorealistic-natural
+Asset type: subtle tileable aged paper texture for a fine-art gallery website, used as an opaque cover over an existing oil painting and as a calm page background.
+Primary request: a flat front-on scanned surface of aged oil painting paper / very fine primed linen archival paper, filling the entire square image with no visible paper edges.
+Color palette: warm very pale ivory beige, overall average close to #eeeade, low contrast.
+Materials/textures: subtle fine woven and paper fiber grain, restrained natural age mottling, softly worn almost imperceptible speckles, believable delicate archival surface.
+Composition/framing: square uniform macro texture, evenly distributed grain, seamless and tileable on all edges.
+Lighting/mood: flat even diffuse illumination, understated gallery background.
+Constraints: no objects, no writing, no symbols, no watermark, no vignette, no stains, no torn edges, no black burnt patches, no scorch marks, no dramatic shading, no painting or illustration. Only the pale empty paper material texture.
