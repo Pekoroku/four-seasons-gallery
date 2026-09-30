@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN" class="paper-edition">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eeeade">
+  <meta name="description" content="Jiang Qiao Yan 油画作品集。从一片秋色出发，在花木、水光与人间片刻里，看见四时流转。">
+  <title>四时之间 · Jiang Qiao Yan</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231c2922'/%3E%3Cpath d='M18 44V20h28v24zM25 37l7-14 7 14M28 32h8' fill='none' stroke='%23d6bc76' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="assets/work-1.webp">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="paper-opening.css?v=7.2">
+  <script defer src="paper-reveal.js?v=7.1"></script>
+  <script defer src="chapter-stops.js?v=7.5"></script>
+  <script defer src="opening-gesture.js?v=7.4.1"></script>
+  <script defer src="app.js?v=7.4"></script>
+</head>
+<body>
+  <a class="skip-link" href="#collection">跳到作品</a>
+  <header class="site-header" id="site-header">
+    <a class="wordmark" href="index.html" aria-label="Jiang Qiao Yan，回到首页"><span>JIANG QIAO YAN</span><small>油画作品集 · SELECTED PAINTINGS</small></a>
+    <nav aria-label="主要导航"><a href="index.html" class="active" aria-current="page">序章</a><a href="works.html">作品</a><a href="about.html">关于</a></nav>
+  </header>
+  <main>
+    <section class="opening" id="opening" aria-labelledby="opening-title">
+      <div class="opening-stage">
+        <canvas class="paper-cover" id="paper-cover" aria-hidden="true"></canvas>
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="small-rule"></span> A STUDY OF SEASONS</p>
+          <h1 id="opening-title">四时<span>之间</span><i>。</i></h1>
+          <p class="hero-english">The quiet passage<br>of seasons.</p>
+          <p class="hero-subtitle">把时光，留在颜色里。</p>
+        </div>
+        <figure class="hero-art" id="hero-art">
+          <button class="art-button" data-art="1" aria-label="查看作品01完整画作">
+            <img id="hero-image" src="assets/work-1.webp" alt="金黄色枝叶垂向湖面，两只小舟浮在倒影中，右侧石拱桥连向幽深树林。" width="4070" height="3214" fetchpriority="high" decoding="async">
+            <span class="view-hint">细看这幅画 <span aria-hidden="true">↗</span></span>
+          </button>
+          <figcaption><span>01 <span class="caption-divider">/</span> 秋色入画</span><span>OIL PAINTING</span></figcaption>
+        </figure>
+        <div class="hero-story" aria-label="作品01观画文字"><p class="eyebrow">01 / A MOMENT IN AUTUMN</p><h2>秋，在水面<br>停了一会儿。</h2><p>金黄落在枝头，也落进水里。<br>小舟、石桥与树影，<br>把一个寻常午后留得很长。</p><span class="story-note">作品 01 · 油画</span></div>
+        <div class="hero-bottom">
+          <div class="scroll-prompt"><span class="scroll-line" aria-hidden="true"></span><span id="opening-cue">轻滚一下，揭开秋色</span><span>SCROLL TO REVEAL</span></div>
+          <div class="hero-bottom-right"><button class="replay-button" id="skip-paper" type="button">直接看画 <span aria-hidden="true">↗</span></button><button class="replay-button" id="replay-intro" type="button" hidden>重看揭幕 <span aria-hidden="true">↺</span></button></div>
+        </div>
+      </div>
+    </section>
+    <section class="collection paper-section" id="collection" aria-labelledby="collection-title">
+      <div class="section-heading reveal"><p class="eyebrow">02 / IN BLOOM</p><h2 id="collection-title">花开有时，<br><span>风景有声。</span></h2><p class="section-intro">从枝头的一点粉白，到铺向远方的明亮花田。<br>季节不只在日历里，也在颜色的深浅之间。</p></div>
+      <div class="garden-grid">
+        <figure class="painting painting-2"><button class="art-button" data-art="2" aria-label="查看作品02完整画作"><img src="assets/work-2.webp" loading="lazy" width="1214" height="957" alt="深色窗框前的粉白繁花与枝干。"><span class="view-hint">查看全幅 ↗</span></button><figcaption><span><small>02</small> 窗前花信</span><span>花枝 · 窗影</span></figcaption></figure>
+        <figure class="painting painting-3"><button class="art-button" data-art="3" aria-label="查看作品03完整画作"><img src="assets/work-3.webp" loading="lazy" width="798" height="986" alt="盛开的粉白荷花、翠绿荷叶与水面上的鸭子。"><span class="view-hint">查看全幅 ↗</span></button><figcaption><span><small>03</small> 荷间清夏</span><span>荷花 · 水面</span></figcaption></figure>
+      </div>
+      <div class="landscape-grid">
+        <figure class="painting painting-4"><button class="art-button" data-art="4" aria-label="查看作品04完整画作"><img src="assets/work-4-small.webp" srcset="assets/work-4-small.webp 900w, assets/work-4.webp 1900w" sizes="(max-width:700px) 84vw, 39vw" loading="lazy" width="3244" height="2595" alt="明亮的橙红花田向远方展开，细高树木与红顶建筑立在蓝天白云之下。"><span class="view-hint">查看全幅 ↗</span></button><figcaption><span><small>04</small> 花野漫游</span><span>花田 · 远山</span></figcaption></figure>
+        <div class="landscape-aside"><p class="interlude-quote reveal">一树花开，<br>一池新绿。<br><em>风景有自己的时序。</em></p><figure class="painting painting-5"><button class="art-button" data-art="5" aria-label="查看作品05完整画作"><img src="assets/work-5-small.webp" srcset="assets/work-5-small.webp 900w, assets/work-5.webp 1900w" sizes="(max-width:700px) 84vw, 36vw" loading="lazy" width="4949" height="3968" alt="绿树之间的临水木屋，树干、岩石和光影倒映在水中。"><span class="view-hint">查看全幅 ↗</span></button><figcaption><span><small>05</small> 林深水静</span><span>木屋 · 林间</span></figcaption></figure></div>
+      </div>
+      <div class="section-end"><span>GROWTH, IN EVERY SHADE.</span><span>花木与风景 / 02—05</span></div>
+    </section>
+    <section class="dusk" id="dusk" aria-labelledby="dusk-title">
+      <div class="dusk-heading reveal"><p class="eyebrow">03 / THE GOLDEN HOUR</p><h2 id="dusk-title">日光慢下来。</h2><p>风把帆吹满，光把水面铺开。</p></div>
+      <figure class="dusk-art painting"><button class="art-button" data-art="6" aria-label="查看作品06完整画作"><img src="assets/work-6.webp" loading="lazy" width="1673" height="1096" alt="灰紫色天空与橙金色地平线之下，一艘张帆船停留在波光水面上。"><span class="view-hint">查看全幅 ↗</span></button><figcaption><span><small>06</small> 帆影与暮光</span><span>水面 · 帆船</span></figcaption></figure>
+      <p class="dusk-english" aria-hidden="true">Let the light linger.</p>
+    </section>
+    <section class="human paper-section" id="human" aria-labelledby="human-title">
+      <div class="section-heading reveal"><p class="eyebrow">04 / MOMENTS OF LIFE</p><h2 id="human-title">风景之外，<br><span>是人间。</span></h2><p class="section-intro">从毕业舞会，到一把圆扇，<br>再到城市路面上闪动的光。<br>目光停下的地方，生活正在发生。</p></div>
+      <div class="human-grid">
+        <figure class="painting painting-7"><button class="art-button" data-art="7" aria-label="查看作品07完整画作"><img src="assets/work-7-small.webp" srcset="assets/work-7-small.webp 900w, assets/work-7.webp 1900w" sizes="(max-width:700px) 84vw, 48vw" loading="lazy" width="3091" height="2326" alt="女儿在邮轮上参加毕业舞会，长裙人物与船外的水面相映。"><span class="view-hint">查看全幅 ↗</span></button><figcaption><span><small>07</small> 毕业舞会</span><span>青春 · 邮轮</span></figcaption></figure>
+        <figure class="painting painting-8"><button class="art-button" data-art="8" aria-label="查看作品08完整画作"><img src="assets/work-8.webp" loading="lazy" width="2263" height="4604" alt="穿深青绿花鸟纹上衣与浅绿长裙的人物手持圆扇，赤足站在深色木质家具前。"><span class="view-hint">查看全幅 ↗</span></button><figcaption><span><small>08</small> 扇底静时</span><span>人物 · 圆扇</span></figcaption></figure>
+        <div class="city-block"><p class="city-intro reveal"><span class="eyebrow">ANOTHER KIND OF LIGHT</span>穿过白昼，<br>还有另一种光。</p><figure class="painting painting-9"><button class="art-button" data-art="9" aria-label="查看作品09完整画作"><img src="assets/work-9-small.webp" srcset="assets/work-9-small.webp 670w, assets/work-9.webp 1414w" sizes="(max-width:700px) 78vw, 37vw" loading="lazy" width="3629" height="4876" alt="高楼与广告牌之间的城市街道，黑色轿车和黄色出租车穿行，湿亮路面映出黄、粉、紫色的光。"><span class="view-hint">查看全幅 ↗</span></button><figcaption><span><small>09</small> 城市余光</span><span>街道 · 光影</span></figcaption></figure></div>
+      </div>
+    </section>
+  </main>
+  <footer id="colophon"><p class="eyebrow">JIANG QIAO YAN / SELECTED PAINTINGS</p><p class="footer-title">四时流转，画中长留。</p><div class="footer-info"><p>九幅油画，一次关于颜色与时光的漫游。<br>由秋色启程，在风景与人物之间缓缓行走。</p><p class="editorial-note">除《毕业舞会》外，页面题签为观画文字。<br>作品编号对应原始图片。</p></div><div class="footer-links"><a href="works.html">浏览完整作品集 ↗</a><a href="about.html">关于蒋巧艳 ↗</a></div><div class="footer-bottom"><span>四时之间 · 油画作品集</span><a href="#opening">回到开篇 ↑</a></div></footer>
+  <aside class="chapter-rail" aria-label="展览章节"><a href="#opening" aria-label="第一章：秋色" class="current"><span>秋色</span><i></i></a><a href="#collection" aria-label="第二章：花木"><span>花木</span><i></i></a><a href="#dusk" aria-label="第三章：水光"><span>水光</span><i></i></a><a href="#human" aria-label="第四章：人间"><span>人间</span><i></i></a></aside>
+  <dialog class="art-dialog" id="art-dialog" aria-labelledby="viewer-title">
+    <div class="viewer-header"><span>JIANG QIAO YAN <small> / SELECTED PAINTINGS</small></span><button class="viewer-close" id="viewer-close" type="button" aria-label="关闭画作">关闭 <span aria-hidden="true">×</span></button></div>
+    <div class="viewer-image-wrap"><img id="viewer-image" src="assets/work-1.webp" alt="" width="4070" height="3214"><p id="viewer-status" role="status"></p></div>
+    <div class="viewer-footer"><button id="viewer-prev" class="viewer-arrow" type="button" aria-label="上一幅作品">←</button><div class="viewer-caption"><p id="viewer-title"></p><p><span id="viewer-count"></span><span class="viewer-note">题签为观画文字</span></p></div><button id="viewer-next" class="viewer-arrow" type="button" aria-label="下一幅作品">→</button></div>
+  </dialog>
+  <noscript><style>.hero-story,.replay-button,.chapter-rail,.paper-cover{display:none!important}</style></noscript>
+</body>
+</html>
