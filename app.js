@@ -151,7 +151,7 @@
     ready: () => imageReady,
     bounds: () => ({start:dimensions.top, end:dimensions.top + dimensions.distance}),
     update: updateScroll,
-    destination: (direction, y) => chapterStops?.destination(direction, y),
+    destination: (direction, y, projectedY) => chapterStops?.destination(direction, y, projectedY),
     onState: queueScroll
   });
 

@@ -8,7 +8,7 @@
     let waiting = null;
     let expectedScroll = global.scrollY;
     let wheelTail = false;
-    let nativeWheel = false;
+    let wheelDirection = 0;
     let wheelQuiet = 0;
     let touch = null;
     let touchTail = false;
@@ -21,7 +21,7 @@
     const ignoredTarget = target => Boolean(target?.closest?.('input,textarea,select,[contenteditable="true"]'));
     const available = () => options.enabled() && !modalOpen();
     function bounds() { return options.bounds(); }
-    function destination(direction) {
+    function destination(direction, distance = 0) {
       if (!available()) return null;
       const b = bounds();
       const y = global.scrollY;
@@ -30,13 +30,13 @@
         if (direction > 0 && y < b.end - 2) return 1;
         if (direction < 0 && y > b.start + 2) return 0;
       }
-      return options.destination?.(direction, y) || null;
+      return options.destination?.(direction, y, y + distance) || null;
     }
     function releaseWheelAfterQuiet() {
       global.clearTimeout(wheelQuiet);
       wheelQuiet = global.setTimeout(() => {
-        nativeWheel = false;
-        if (!running && waiting === null) wheelTail = false;
+        wheelTail = false;
+        wheelDirection = 0;
       }, 220);
     }
     function cancel() {
@@ -46,7 +46,7 @@
       motion = null;
       waiting = null;
       wheelTail = false;
-      nativeWheel = false;
+      wheelDirection = 0;
       touchTail = false;
       touch = null;
       heldKey = null;
@@ -98,30 +98,39 @@
           running = false;
           motion = null;
           options.onState?.(false);
-          // Consume the initiating gesture's tail, but a later fresh gesture
-          // resumes ordinary scrolling after this short quiet interval.
-          releaseWheelAfterQuiet();
+          // Wheel-tail expiry belongs to actual input. Do not add another
+          // quiet period after an animation whose initiating input is over.
           touchTail = Boolean(touch);
         }
       }
       animation = global.requestAnimationFrame(tick);
     }
     function wheel(event) {
+      // Some browsers make later wheel events non-cancelable. Starting our
+      // animation then would race native scrolling and immediately cancel it.
+      if (event.defaultPrevented || event.cancelable === false) return;
       if (event.ctrlKey || event.metaKey || ignoredTarget(event.target) || !available()) return;
       if (Math.abs(event.deltaY) <= Math.abs(event.deltaX) || !event.deltaY) return;
-      if (running || waiting !== null || wheelTail) {
+      const direction = Math.sign(event.deltaY);
+      if (running || waiting !== null || (wheelTail && direction === wheelDirection)) {
         event.preventDefault();
         wheelTail = true;
+        wheelDirection = direction;
         releaseWheelAfterQuiet();
         return;
       }
-      // A reading gesture stays native even when its inertia reaches the next
-      // chapter boundary. Only a fresh gesture can initiate that transition.
-      if (nativeWheel) { releaseWheelAfterQuiet(); return; }
-      const target = destination(Math.sign(event.deltaY));
-      if (target === null) { nativeWheel = true; releaseWheelAfterQuiet(); return; }
+      // An explicit reversal after a completed transition is a new intent,
+      // even if the previous direction's inertia has not timed out yet.
+      if (wheelTail) {
+        wheelTail = false;
+        global.clearTimeout(wheelQuiet);
+      }
+      const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? global.innerHeight : 1;
+      const target = destination(direction, event.deltaY * unit);
+      if (target === null) return;
       event.preventDefault();
       wheelTail = true;
+      wheelDirection = direction;
       start(target);
       releaseWheelAfterQuiet();
     }
@@ -170,7 +179,8 @@
       if (!direction) return;
       if (heldKey === event.key) { event.preventDefault(); return; }
       if (running || waiting !== null) { heldKey = event.key; event.preventDefault(); return; }
-      const target = destination(direction);
+      const distance = direction * (event.key.startsWith('Arrow') ? 40 : global.innerHeight * .85);
+      const target = destination(direction, distance);
       if (target !== null) { heldKey = event.key; event.preventDefault(); start(target); }
     }
     function scroll() {
