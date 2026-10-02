@@ -7,7 +7,7 @@
   <meta name="description" content="Jiang Qiao Yan 油画作品集。从一片秋色出发，在花木、水光与人间片刻里，看见四时流转。">
   <title>四时之间 · Jiang Qiao Yan</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231c2922'/%3E%3Cpath d='M18 44V20h28v24zM25 37l7-14 7 14M28 32h8' fill='none' stroke='%23d6bc76' stroke-width='2'/%3E%3C/svg%3E">
-  <link rel="preload" as="image" href="assets/work-1.webp">
+  <link rel="preload" as="image" href="assets/work-1-medium.webp" imagesrcset="assets/work-1-small.webp 900w, assets/work-1-medium.webp 1600w, assets/work-1.webp 2400w" imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="paper-opening.css?v=7.2">
   <script defer src="paper-reveal.js?v=7.1"></script>
@@ -33,7 +33,7 @@
         </div>
         <figure class="hero-art" id="hero-art">
           <button class="art-button" data-art="1" aria-label="查看作品01完整画作">
-            <img id="hero-image" src="assets/work-1.webp" alt="金黄色枝叶垂向湖面，两只小舟浮在倒影中，右侧石拱桥连向幽深树林。" width="4070" height="3214" fetchpriority="high" decoding="async">
+            <img id="hero-image" src="assets/work-1-medium.webp" srcset="assets/work-1-small.webp 900w, assets/work-1-medium.webp 1600w, assets/work-1.webp 2400w" sizes="100vw" alt="金黄色枝叶垂向湖面，两只小舟浮在倒影中，右侧石拱桥连向幽深树林。" width="4070" height="3214" fetchpriority="high" decoding="async">
             <span class="view-hint">细看这幅画 <span aria-hidden="true">↗</span></span>
           </button>
           <figcaption><span>01 <span class="caption-divider">/</span> 秋色入画</span><span>OIL PAINTING</span></figcaption>
@@ -75,7 +75,7 @@
   <aside class="chapter-rail" aria-label="展览章节"><a href="#opening" aria-label="第一章：秋色" class="current"><span>秋色</span><i></i></a><a href="#collection" aria-label="第二章：花木"><span>花木</span><i></i></a><a href="#dusk" aria-label="第三章：水光"><span>水光</span><i></i></a><a href="#human" aria-label="第四章：人间"><span>人间</span><i></i></a></aside>
   <dialog class="art-dialog" id="art-dialog" aria-labelledby="viewer-title">
     <div class="viewer-header"><span>JIANG QIAO YAN <small> / SELECTED PAINTINGS</small></span><button class="viewer-close" id="viewer-close" type="button" aria-label="关闭画作">关闭 <span aria-hidden="true">×</span></button></div>
-    <div class="viewer-image-wrap"><img id="viewer-image" src="assets/work-1.webp" alt="" width="4070" height="3214"><p id="viewer-status" role="status"></p></div>
+    <div class="viewer-image-wrap"><img id="viewer-image" alt="" width="4070" height="3214"><p id="viewer-status" role="status"></p></div>
     <div class="viewer-footer"><button id="viewer-prev" class="viewer-arrow" type="button" aria-label="上一幅作品">←</button><div class="viewer-caption"><p id="viewer-title"></p><p><span id="viewer-count"></span><span class="viewer-note">题签为观画文字</span></p></div><button id="viewer-next" class="viewer-arrow" type="button" aria-label="下一幅作品">→</button></div>
   </dialog>
   <noscript><style>.hero-story,.replay-button,.chapter-rail,.paper-cover{display:none!important}</style></noscript>
