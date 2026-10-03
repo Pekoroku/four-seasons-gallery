@@ -178,6 +178,9 @@
     currentArt = (index + artworks.length) % artworks.length;
     const [title, alt, width, height] = artworks[currentArt];
     document.getElementById('viewer-title').textContent = title;
+    window.ArtworkDetails.render(document.getElementById('viewer-metadata'), window.OPENING_ARTWORKS_METADATA?.[currentArt + 1]);
+    document.querySelector('.viewer-body').scrollTop = 0;
+    document.querySelector('.viewer-info').scrollTop = 0;
     document.getElementById('viewer-count').textContent = `作品 ${String(currentArt + 1).padStart(2, '0')} / 09`;
     document.querySelector('.viewer-note').textContent = currentArt === 6 ? '女儿在邮轮上的毕业舞会' : '题签为观画文字';
     viewerImage.alt = alt;

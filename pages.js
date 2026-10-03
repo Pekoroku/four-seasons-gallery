@@ -10,7 +10,7 @@
   function setLanguage(next, remember=true) {
     language = next === 'en' ? 'en' : 'zh';
     document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
-    document.querySelectorAll('[data-zh][data-en]').forEach(el => el.textContent = el.dataset[language]);
+    document.querySelectorAll('[data-zh][data-en]').forEach(el => window.ArtworkDetails.setControlText(el, el.dataset[language]));
     document.querySelectorAll('[data-zh-alt]').forEach(el => el.alt = el.dataset[language === 'en' ? 'enAlt' : 'zhAlt']);
     document.querySelectorAll('[data-archive]').forEach(link => {
       const item = window.ART_ARCHIVE.find(row => row.id === link.dataset.archive);
@@ -65,7 +65,7 @@
 
   function applyLabels() {
     const t=dictionary[language];
-    closeButton.textContent=t.close;
+    window.ArtworkDetails.setControlText(closeButton,t.close);
     closeButton.setAttribute('aria-label',language==='en'?'Close image':'关闭大图');
     zoomButton.textContent=zoomed?t.fit:t.zoom;
     zoomButton.setAttribute('aria-pressed',String(zoomed));
@@ -84,7 +84,10 @@
     resetZoom();
     document.getElementById('detail-title').textContent=language==='en'&&item.titleEn?item.titleEn:item.title;
     document.getElementById('detail-description').textContent=language==='en'&&item.altEn?item.altEn:item.alt;
-    document.getElementById('detail-category').textContent=isArchive?t.archive:`${item.categoryLabel} / ${item.medium}`;
+    document.getElementById('detail-category').textContent=isArchive?t.archive:item.categoryLabel;
+    window.ArtworkDetails.render(document.getElementById('detail-metadata'),isArchive?null:item,language);
+    document.querySelector('.detail-info').scrollTop=0;
+    document.querySelector('.detail-body').scrollTop=0;
     document.getElementById('detail-editorial').textContent=isArchive?t.photoNote:t.editorial;
     document.getElementById('detail-count').textContent=`${String(index+1).padStart(2,'0')} / ${String(items.length).padStart(2,'0')}`;
     picture.alt=language==='en'&&item.altEn?item.altEn:item.alt;

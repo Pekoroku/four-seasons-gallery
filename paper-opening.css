@@ -1,5 +1,5 @@
 /* A scroll-led prelude; the exhibition below keeps its original layout. */
-html.paper-edition{scroll-behavior:auto}
+html.paper-edition{scroll-behavior:auto;scroll-padding-top:0}
 .paper-edition body{background:#eeeade}
 .paper-edition .opening,.paper-edition .opening-stage{background-color:#eeeade;background-image:url('assets/aged-paper.webp');background-size:1024px 1024px;color:#30372d}
 .paper-edition .opening{height:100svh;min-height:0}
